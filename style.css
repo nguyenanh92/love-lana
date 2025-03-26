@@ -1,3 +1,14 @@
+:root {
+    --anh-color: #FF8989;
+    --lana-color: #FFB5B5;
+    --love-gradient: linear-gradient(135deg, var(--anh-color), var(--lana-color));
+    --love-shadow: 0 4px 12px rgba(255, 137, 137, 0.3);
+    --white: #FFFFFF;
+    --bg-color: #FFB5B5;
+    --text-color: #FFFFFF;
+    --date-color: rgba(255, 255, 255, 0.8);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +18,7 @@
 
 body {
     min-height: 100vh;
-    background-color: #FFB5B5;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +31,9 @@ body {
     font-weight: 600;
     margin-bottom: 2rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .container {
@@ -55,29 +69,63 @@ h1 {
 }
 
 .main-counter {
-    background: #FFE4E4;
+    background: var(--bg-color);
     border-radius: 16px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
+.lovers-names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.name.anh {
+    color: var(--white);
+}
+
+.name.lana {
+    color: var(--white);
+}
+
+.heart {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
 .counter-label {
-    color: #666;
+    color: var(--text-color);
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin: 1rem 0;
 }
 
 .counter-value {
-    font-size: 3rem;
-    color: #FF8989;
+    font-size: 4rem;
+    color: var(--text-color);
     font-weight: 600;
     margin: 0.5rem 0;
 }
 
 .counter-date {
-    color: #999;
-    font-size: 0.9rem;
+    color: var(--date-color);
+    font-size: 1rem;
 }
 
 .special-days {
@@ -121,7 +169,7 @@ h1 {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: #FF8989;
+    background: var(--love-gradient);
     color: white;
     border: none;
     font-size: 2rem;
@@ -130,7 +178,7 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: 2rem auto 0;
-    box-shadow: 0 4px 12px rgba(255, 137, 137, 0.3);
+    box-shadow: var(--love-shadow);
     transition: transform 0.2s;
 }
 
